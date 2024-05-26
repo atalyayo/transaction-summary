@@ -20,25 +20,11 @@ public class BaseResponse<T> {
 	@JsonProperty("metadata")
 	@JsonInclude(JsonInclude.Include.NON_NULL)  
 	private MetadataResponse metadata;
-	
-	@JsonProperty("error")
-	@JsonInclude(JsonInclude.Include.NON_NULL)  
-	private ErrorResponse error;
+
 	
 	public BaseResponse(T data) {
 		super();
 		this.data = data;
 	}
-	
-	public BaseResponse(T data, MetadataResponse metadata) {
-		super();
-		this.data = data;
-		this.metadata = metadata;
-	}
-	
-	public BaseResponse(Exception e) {
-		super();
-		this.error = new ErrorResponse(e.getClass().getName(), e.getMessage());
-	}
-	
+
 }
