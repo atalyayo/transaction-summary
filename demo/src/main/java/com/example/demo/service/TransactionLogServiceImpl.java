@@ -58,5 +58,10 @@ public class TransactionLogServiceImpl implements TransactionLogService {
 	public boolean validateAccountNumberIsExist(String accNumber) {
 		return transactionLogRepo.existsByAccountFromOrAccountTo(accNumber, accNumber);
 	}
+
+	@Override
+	public List<TransactionLog> findAll() {
+		return transactionLogRepo.findAll();
+	}
 	
 }
